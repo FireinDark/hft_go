@@ -1,0 +1,2288 @@
+swagger: "2.0"
+info:
+  title: beego Test API
+  description: beego has a very cool tools to autogenerate documents for your API
+  version: 1.0.0
+  termsOfService: http://beego.me/
+  contact:
+    email: yi.liu@esmart365.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /v1
+paths:
+  /barcode/:
+    get:
+      tags:
+      - barcode
+      description: get Barcode
+      operationId: BarcodeController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Barcode'
+        "403":
+          description: ""
+    post:
+      tags:
+      - barcode
+      description: create Barcode
+      operationId: BarcodeController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Barcode content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Barcode'
+      responses:
+        "201":
+          description: '{int} models.Barcode'
+        "403":
+          description: body is empty
+  /barcode/{id}:
+    get:
+      tags:
+      - barcode
+      description: get Barcode by id
+      operationId: BarcodeController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Barcode'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - barcode
+      description: update the Barcode
+      operationId: BarcodeController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Barcode content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Barcode'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Barcode'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - barcode
+      description: delete the Barcode
+      operationId: BarcodeController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /cloudpay_statement_detail/:
+    get:
+      tags:
+      - cloudpay_statement_detail
+      description: get CloudpayStatementDetail
+      operationId: CloudpayStatementDetailController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.CloudpayStatementDetail'
+        "403":
+          description: ""
+    post:
+      tags:
+      - cloudpay_statement_detail
+      description: create CloudpayStatementDetail
+      operationId: CloudpayStatementDetailController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for CloudpayStatementDetail content
+        required: true
+        schema:
+          $ref: '#/definitions/models.CloudpayStatementDetail'
+      responses:
+        "201":
+          description: '{int} models.CloudpayStatementDetail'
+        "403":
+          description: body is empty
+  /cloudpay_statement_detail/{id}:
+    get:
+      tags:
+      - cloudpay_statement_detail
+      description: get CloudpayStatementDetail by id
+      operationId: CloudpayStatementDetailController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.CloudpayStatementDetail'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - cloudpay_statement_detail
+      description: update the CloudpayStatementDetail
+      operationId: CloudpayStatementDetailController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for CloudpayStatementDetail content
+        required: true
+        schema:
+          $ref: '#/definitions/models.CloudpayStatementDetail'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.CloudpayStatementDetail'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - cloudpay_statement_detail
+      description: delete the CloudpayStatementDetail
+      operationId: CloudpayStatementDetailController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /member/:
+    get:
+      tags:
+      - member
+      description: get Member
+      operationId: MemberController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Member'
+        "403":
+          description: ""
+    post:
+      tags:
+      - member
+      description: create Member
+      operationId: MemberController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Member content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Member'
+      responses:
+        "201":
+          description: '{int} models.Member'
+        "403":
+          description: body is empty
+  /member/{id}:
+    get:
+      tags:
+      - member
+      description: get Member by id
+      operationId: MemberController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Member'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - member
+      description: update the Member
+      operationId: MemberController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Member content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Member'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Member'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - member
+      description: delete the Member
+      operationId: MemberController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /member_face/:
+    get:
+      tags:
+      - member_face
+      description: get MemberFace
+      operationId: MemberFaceController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.MemberFace'
+        "403":
+          description: ""
+    post:
+      tags:
+      - member_face
+      description: create MemberFace
+      operationId: MemberFaceController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for MemberFace content
+        required: true
+        schema:
+          $ref: '#/definitions/models.MemberFace'
+      responses:
+        "201":
+          description: '{int} models.MemberFace'
+        "403":
+          description: body is empty
+  /member_face/{id}:
+    get:
+      tags:
+      - member_face
+      description: get MemberFace by id
+      operationId: MemberFaceController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.MemberFace'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - member_face
+      description: update the MemberFace
+      operationId: MemberFaceController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for MemberFace content
+        required: true
+        schema:
+          $ref: '#/definitions/models.MemberFace'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.MemberFace'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - member_face
+      description: delete the MemberFace
+      operationId: MemberFaceController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /shop_financial_order/:
+    get:
+      tags:
+      - shop_financial_order
+      description: get ShopFinancialOrder
+      operationId: ShopFinancialOrderController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ShopFinancialOrder'
+        "403":
+          description: ""
+    post:
+      tags:
+      - shop_financial_order
+      description: create ShopFinancialOrder
+      operationId: ShopFinancialOrderController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for ShopFinancialOrder content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ShopFinancialOrder'
+      responses:
+        "201":
+          description: '{int} models.ShopFinancialOrder'
+        "403":
+          description: body is empty
+  /shop_financial_order/{id}:
+    get:
+      tags:
+      - shop_financial_order
+      description: get ShopFinancialOrder by id
+      operationId: ShopFinancialOrderController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ShopFinancialOrder'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - shop_financial_order
+      description: update the ShopFinancialOrder
+      operationId: ShopFinancialOrderController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for ShopFinancialOrder content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ShopFinancialOrder'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ShopFinancialOrder'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - shop_financial_order
+      description: delete the ShopFinancialOrder
+      operationId: ShopFinancialOrderController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /shop_order/:
+    get:
+      tags:
+      - shop_order
+      description: get ShopOrder
+      operationId: ShopOrderController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ShopOrder'
+        "403":
+          description: ""
+    post:
+      tags:
+      - shop_order
+      description: create ShopOrder
+      operationId: ShopOrderController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for ShopOrder content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ShopOrder'
+      responses:
+        "201":
+          description: '{int} models.ShopOrder'
+        "403":
+          description: body is empty
+  /shop_order/{id}:
+    get:
+      tags:
+      - shop_order
+      description: get ShopOrder by id
+      operationId: ShopOrderController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ShopOrder'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - shop_order
+      description: update the ShopOrder
+      operationId: ShopOrderController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for ShopOrder content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ShopOrder'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ShopOrder'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - shop_order
+      description: delete the ShopOrder
+      operationId: ShopOrderController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /shop_sales_records/:
+    get:
+      tags:
+      - shop_sales_records
+      description: get ShopSalesRecords
+      operationId: ShopSalesRecordsController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ShopSalesRecords'
+        "403":
+          description: ""
+    post:
+      tags:
+      - shop_sales_records
+      description: create ShopSalesRecords
+      operationId: ShopSalesRecordsController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for ShopSalesRecords content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ShopSalesRecords'
+      responses:
+        "201":
+          description: '{int} models.ShopSalesRecords'
+        "403":
+          description: body is empty
+  /shop_sales_records/{id}:
+    get:
+      tags:
+      - shop_sales_records
+      description: get ShopSalesRecords by id
+      operationId: ShopSalesRecordsController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ShopSalesRecords'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - shop_sales_records
+      description: update the ShopSalesRecords
+      operationId: ShopSalesRecordsController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for ShopSalesRecords content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ShopSalesRecords'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ShopSalesRecords'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - shop_sales_records
+      description: delete the ShopSalesRecords
+      operationId: ShopSalesRecordsController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /shop_sales_settings/:
+    get:
+      tags:
+      - shop_sales_settings
+      description: get ShopSalesSettings
+      operationId: ShopSalesSettingsController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ShopSalesSettings'
+        "403":
+          description: ""
+    post:
+      tags:
+      - shop_sales_settings
+      description: create ShopSalesSettings
+      operationId: ShopSalesSettingsController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for ShopSalesSettings content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ShopSalesSettings'
+      responses:
+        "201":
+          description: '{int} models.ShopSalesSettings'
+        "403":
+          description: body is empty
+  /shop_sales_settings/{id}:
+    get:
+      tags:
+      - shop_sales_settings
+      description: get ShopSalesSettings by id
+      operationId: ShopSalesSettingsController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ShopSalesSettings'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - shop_sales_settings
+      description: update the ShopSalesSettings
+      operationId: ShopSalesSettingsController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for ShopSalesSettings content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ShopSalesSettings'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ShopSalesSettings'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - shop_sales_settings
+      description: delete the ShopSalesSettings
+      operationId: ShopSalesSettingsController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /shop_startup_store_costs/:
+    get:
+      tags:
+      - shop_startup_store_costs
+      description: get ShopStartupStoreCosts
+      operationId: ShopStartupStoreCostsController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ShopStartupStoreCosts'
+        "403":
+          description: ""
+    post:
+      tags:
+      - shop_startup_store_costs
+      description: create ShopStartupStoreCosts
+      operationId: ShopStartupStoreCostsController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for ShopStartupStoreCosts content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ShopStartupStoreCosts'
+      responses:
+        "201":
+          description: '{int} models.ShopStartupStoreCosts'
+        "403":
+          description: body is empty
+  /shop_startup_store_costs/{id}:
+    get:
+      tags:
+      - shop_startup_store_costs
+      description: get ShopStartupStoreCosts by id
+      operationId: ShopStartupStoreCostsController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ShopStartupStoreCosts'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - shop_startup_store_costs
+      description: update the ShopStartupStoreCosts
+      operationId: ShopStartupStoreCostsController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for ShopStartupStoreCosts content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ShopStartupStoreCosts'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ShopStartupStoreCosts'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - shop_startup_store_costs
+      description: delete the ShopStartupStoreCosts
+      operationId: ShopStartupStoreCostsController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /sys_barcode/:
+    get:
+      tags:
+      - sys_barcode
+      description: get SysBarcode
+      operationId: SysBarcodeController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysBarcode'
+        "403":
+          description: ""
+    post:
+      tags:
+      - sys_barcode
+      description: create SysBarcode
+      operationId: SysBarcodeController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for SysBarcode content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysBarcode'
+      responses:
+        "201":
+          description: '{int} models.SysBarcode'
+        "403":
+          description: body is empty
+  /sys_barcode/{id}:
+    get:
+      tags:
+      - sys_barcode
+      description: get SysBarcode by id
+      operationId: SysBarcodeController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysBarcode'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - sys_barcode
+      description: update the SysBarcode
+      operationId: SysBarcodeController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for SysBarcode content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysBarcode'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysBarcode'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - sys_barcode
+      description: delete the SysBarcode
+      operationId: SysBarcodeController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /sys_barcode_new/:
+    get:
+      tags:
+      - sys_barcode_new
+      description: get SysBarcodeNew
+      operationId: SysBarcodeNewController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysBarcodeNew'
+        "403":
+          description: ""
+    post:
+      tags:
+      - sys_barcode_new
+      description: create SysBarcodeNew
+      operationId: SysBarcodeNewController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for SysBarcodeNew content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysBarcodeNew'
+      responses:
+        "201":
+          description: '{int} models.SysBarcodeNew'
+        "403":
+          description: body is empty
+  /sys_barcode_new/{id}:
+    get:
+      tags:
+      - sys_barcode_new
+      description: get SysBarcodeNew by id
+      operationId: SysBarcodeNewController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysBarcodeNew'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - sys_barcode_new
+      description: update the SysBarcodeNew
+      operationId: SysBarcodeNewController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for SysBarcodeNew content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysBarcodeNew'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysBarcodeNew'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - sys_barcode_new
+      description: delete the SysBarcodeNew
+      operationId: SysBarcodeNewController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /sys_barcode_old/:
+    get:
+      tags:
+      - sys_barcode_old
+      description: get SysBarcodeOld
+      operationId: SysBarcodeOldController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysBarcodeOld'
+        "403":
+          description: ""
+    post:
+      tags:
+      - sys_barcode_old
+      description: create SysBarcodeOld
+      operationId: SysBarcodeOldController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for SysBarcodeOld content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysBarcodeOld'
+      responses:
+        "201":
+          description: '{int} models.SysBarcodeOld'
+        "403":
+          description: body is empty
+  /sys_barcode_old/{id}:
+    get:
+      tags:
+      - sys_barcode_old
+      description: get SysBarcodeOld by id
+      operationId: SysBarcodeOldController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysBarcodeOld'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - sys_barcode_old
+      description: update the SysBarcodeOld
+      operationId: SysBarcodeOldController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for SysBarcodeOld content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysBarcodeOld'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysBarcodeOld'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - sys_barcode_old
+      description: delete the SysBarcodeOld
+      operationId: SysBarcodeOldController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /unit/:
+    get:
+      tags:
+      - unit
+      description: get Unit
+      operationId: UnitController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Unit'
+        "403":
+          description: ""
+    post:
+      tags:
+      - unit
+      description: create Unit
+      operationId: UnitController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Unit content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Unit'
+      responses:
+        "201":
+          description: '{int} models.Unit'
+        "403":
+          description: body is empty
+  /unit/{id}:
+    get:
+      tags:
+      - unit
+      description: get Unit by id
+      operationId: UnitController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Unit'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - unit
+      description: update the Unit
+      operationId: UnitController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Unit content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Unit'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Unit'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - unit
+      description: delete the Unit
+      operationId: UnitController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+definitions:
+  models.Barcode:
+    title: Barcode
+    type: object
+    properties:
+      Addr:
+        type: string
+      Addr2:
+        type: string
+      Batch:
+        description: 数据批次
+        type: integer
+        format: int64
+      Code2:
+        type: string
+      ExpirationDate:
+        description: 保质期
+        type: integer
+        format: int64
+      ExpirationDateUnit:
+        description: 保质期单位（1 月 2 天 3小时）
+        type: integer
+        format: int32
+      FactoryName:
+        type: string
+      FactoryName2:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Img:
+        type: string
+      IsHigh:
+        type: integer
+        format: int32
+      IsPack:
+        description: 是否为包装 0默认 1否 2是
+        type: integer
+        format: int32
+      Issame:
+        description: 是否同一产品 1是 2否 3 没找到
+        type: integer
+        format: int32
+      Name:
+        type: string
+      Name2:
+        type: string
+      RetailPrice:
+        type: string
+      Spec:
+        type: string
+      Spec2:
+        type: string
+      Specnum:
+        description: 规格数量
+        type: integer
+        format: int64
+      Src:
+        type: string
+      Status:
+        description: 1默认 2 已修改 3已复查
+        type: integer
+        format: int32
+      TradePrice:
+        type: string
+      Trademark:
+        type: string
+      Trademark2:
+        type: string
+      UnitId:
+        description: 单位id 可对于该条码对应单位个数
+        type: integer
+        format: int64
+      Units:
+        type: string
+      UpdateAt:
+        type: string
+        format: string
+      Wholenum:
+        type: integer
+        format: int64
+      Wholeunit:
+        type: string
+  models.CloudpayStatementDetail:
+    title: CloudpayStatementDetail
+    type: object
+    properties:
+      Amount:
+        description: 商户交易金额
+        type: number
+        format: float
+      Chcd:
+        description: 交易渠道
+        type: string
+      Clearing:
+        description: 商户清算金额
+        type: number
+        format: float
+      CreateDate:
+        description: Created on
+        type: string
+        format: string
+      CreateUid:
+        description: Created by
+        type: integer
+        format: int64
+      Id:
+        description: 主键id
+        type: integer
+        format: int64
+      Mchntid:
+        description: 服务商户号
+        type: string
+      OrderNum:
+        description: 订单号
+        type: string
+      Poundage:
+        description: 商户手续费
+        type: number
+        format: float
+      Terminalid:
+        type: string
+      TransOrderNum:
+        type: string
+      TransTime:
+        description: 交易时间
+        type: string
+        format: string
+      Type:
+        description: 交易类型
+        type: string
+      WriteDate:
+        description: Last Updated on
+        type: string
+        format: string
+      WriteUid:
+        description: Last Updated by
+        type: integer
+        format: int64
+  models.Member:
+    title: Member
+    type: object
+    properties:
+      Address:
+        description: 地址
+        type: string
+      Area:
+        description: '地区 来自 province_city_area 表id '
+        type: integer
+        format: int64
+      Birthday:
+        description: 出生年月
+        type: string
+        format: string
+      City:
+        description: 城市 来自 province_city_area 表id
+        type: integer
+        format: int64
+      Email:
+        description: Email
+        type: string
+      Fax:
+        description: 传真
+        type: string
+      FullName:
+        description: 姓名
+        type: string
+      Gender:
+        description: 性别 (1 男性 2女性)
+        type: integer
+        format: int32
+      Id:
+        description: 会员id
+        type: integer
+        format: int64
+      IsActive:
+        description: 是否激活，0未激活， 1激活
+        type: integer
+        format: int32
+      Marriage:
+        description: 婚姻 (1未婚 2已婚)
+        type: integer
+        format: int32
+      Mobile:
+        type: string
+      Password:
+        description: 密码
+        type: string
+      PersonId:
+        description: 人脸识别每个人对应的id
+        type: string
+      PersongroupId:
+        description: 所属GroupId
+        type: string
+      Pic:
+        description: 用户头像
+        type: string
+      Postcode:
+        description: 邮政编码
+        type: string
+      Province:
+        description: '省 来自 province_city_area 表id '
+        type: integer
+        format: int64
+      RegisterTime:
+        description: 注册时间
+        type: string
+        format: string
+      Remark:
+        description: 备注
+        type: string
+      ShopId:
+        description: 会员常去的店铺id
+        type: string
+      Telephone:
+        description: 电话
+        type: string
+      Valid:
+        description: 是否有效 (1 有效 2 无效)
+        type: integer
+        format: int32
+  models.MemberFace:
+    title: MemberFace
+    type: object
+    properties:
+      Id:
+        type: integer
+        format: int64
+      IsDeleted:
+        description: 默认为0， 未删除， 1， 已删除
+        type: integer
+        format: int32
+      MemberId:
+        type: integer
+        format: int64
+      PersongroupId:
+        type: string
+      UpdateTime:
+        description: 更新时间
+        type: string
+        format: string
+      UserData:
+        type: string
+  models.ShopFinancialOrder:
+    title: ShopFinancialOrder
+    type: object
+    properties:
+      Amount:
+        type: number
+        format: float
+      AmountChanged:
+        type: number
+        format: float
+      CreateDate:
+        type: string
+        format: string
+      CreateUid:
+        type: integer
+        format: int64
+      Id:
+        description: 主键id
+        type: integer
+        format: int64
+      OrderId:
+        type: string
+      RecordDatetime:
+        type: string
+        format: string
+      RequestNumber:
+        type: string
+      Status:
+        type: string
+      WriteDate:
+        type: string
+        format: string
+      WriteUid:
+        type: integer
+        format: int64
+  models.ShopOrder:
+    title: ShopOrder
+    type: object
+    properties:
+      CreateDate:
+        type: string
+        format: string
+      CreateUid:
+        type: integer
+        format: int64
+      DayOrderSeq:
+        description: day_order_seq
+        type: integer
+        format: int64
+      Discount:
+        description: 折扣
+        type: number
+        format: float
+      GoodsCatagory:
+        type: integer
+        format: int64
+      Id:
+        description: 主键id
+        type: integer
+        format: int64
+      MemberId:
+        description: 会员id
+        type: integer
+        format: int64
+      Operator:
+        type: string
+      OrderId:
+        description: 订单id
+        type: string
+      PayType:
+        description: 支付方式
+        type: string
+      PayedTotal:
+        type: number
+        format: float
+      Receivable:
+        description: 应收款
+        type: number
+        format: float
+      SmallChange:
+        type: number
+        format: float
+      Status:
+        description: status
+        type: integer
+        format: int64
+      StoreId:
+        description: 店铺id
+        type: integer
+        format: int64
+      TotalNoDiscount:
+        type: number
+        format: float
+      WriteDate:
+        type: string
+        format: string
+      WriteUid:
+        description: Last Updated by
+        type: integer
+        format: int64
+  models.ShopSalesRecords:
+    title: ShopSalesRecords
+    type: object
+    properties:
+      Count:
+        type: integer
+        format: int64
+      CreateDate:
+        type: string
+        format: string
+      CreateUid:
+        type: integer
+        format: int64
+      Id:
+        description: 主键id
+        type: integer
+        format: int64
+      Name:
+        type: string
+      OperateTime:
+        type: string
+        format: string
+      Operator:
+        type: string
+      OperatorName:
+        type: string
+      OrderId:
+        description: 订单id
+        type: string
+      PayType:
+        description: 支付方式
+        type: string
+      PricePer:
+        type: number
+        format: float
+      ProductId:
+        description: 产品id
+        type: string
+      SalesStatus:
+        type: string
+      StoreId:
+        type: integer
+        format: int64
+      WriteDate:
+        type: string
+        format: string
+      WriteUid:
+        type: integer
+        format: int64
+  models.ShopSalesSettings:
+    title: ShopSalesSettings
+    type: object
+    properties:
+      CreateDate:
+        type: string
+        format: string
+      CreateUid:
+        type: integer
+        format: int64
+      EraseCent:
+        type: integer
+        format: int32
+      Id:
+        description: 主键id
+        type: integer
+        format: int64
+      PrintReceive:
+        type: integer
+        format: int32
+      StoreId:
+        description: 店铺id
+        type: integer
+        format: int64
+      UseAlipay:
+        type: integer
+        format: int32
+      UseWechat:
+        type: integer
+        format: int32
+      WriteDate:
+        type: string
+        format: string
+      WriteUid:
+        type: integer
+        format: int64
+  models.ShopStartupStoreCosts:
+    title: ShopStartupStoreCosts
+    type: object
+    properties:
+      CreateDate:
+        type: string
+        format: string
+      CreateUid:
+        type: integer
+        format: int64
+      Id:
+        description: 主键id
+        type: integer
+        format: int64
+      LaborCost:
+        type: number
+        format: float
+      OtherExpense:
+        type: number
+        format: float
+      PropertyManagementFee:
+        type: number
+        format: float
+      Rent:
+        type: number
+        format: float
+      StoreId:
+        type: integer
+        format: int64
+      Utilities:
+        type: number
+        format: float
+      WriteDate:
+        type: string
+        format: string
+      WriteUid:
+        type: integer
+        format: int64
+  models.SysBarcode:
+    title: SysBarcode
+    type: object
+    properties:
+      Addr:
+        type: string
+      Addr2:
+        type: string
+      Batch:
+        description: 数据批次
+        type: integer
+        format: int64
+      Code2:
+        type: string
+      ExpirationDate:
+        description: 保质期
+        type: integer
+        format: int64
+      ExpirationDateUnit:
+        description: 保质期单位（1 月 2 天 3小时）
+        type: integer
+        format: int32
+      FactoryName:
+        type: string
+      FactoryName2:
+        type: string
+      Id:
+        type: string
+      Img:
+        type: string
+      IsHigh:
+        type: integer
+        format: int32
+      IsPack:
+        description: 是否为包装 0默认 1否 2是
+        type: integer
+        format: int32
+      Issame:
+        description: 是否同一产品 1是 2否 3 没找到
+        type: integer
+        format: int32
+      Name:
+        type: string
+      Name2:
+        type: string
+      RetailPrice:
+        type: string
+      Spec:
+        type: string
+      Spec2:
+        type: string
+      Specnum:
+        description: 规格数量
+        type: integer
+        format: int64
+      Src:
+        type: string
+      Status:
+        description: 1默认 2 已修改 3已复查
+        type: integer
+        format: int32
+      TradePrice:
+        type: string
+      Trademark:
+        type: string
+      Trademark2:
+        type: string
+      UnitId:
+        description: 单位id 可对于该条码对应单位个数
+        type: integer
+        format: int64
+      Units:
+        type: string
+      UpdateAt:
+        type: string
+        format: string
+      Wholenum:
+        type: integer
+        format: int64
+      Wholeunit:
+        type: string
+  models.SysBarcodeNew:
+    title: SysBarcodeNew
+    type: object
+    properties:
+      Addr:
+        type: string
+      Addr2:
+        type: string
+      Batch:
+        description: 数据批次
+        type: integer
+        format: int64
+      Code2:
+        type: string
+      ExpirationDate:
+        description: 保质期
+        type: integer
+        format: int64
+      ExpirationDateUnit:
+        description: 保质期单位（1 月 2 天 3小时）
+        type: integer
+        format: int32
+      FactoryName:
+        type: string
+      FactoryName2:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Img:
+        type: string
+      IsHigh:
+        type: integer
+        format: int32
+      IsPack:
+        description: 是否为包装 0默认 1否 2是
+        type: integer
+        format: int32
+      Issame:
+        description: 是否同一产品 1是 2否 3 没找到
+        type: integer
+        format: int32
+      Name:
+        type: string
+      Name2:
+        type: string
+      RetailPrice:
+        type: string
+      Spec:
+        type: string
+      Spec2:
+        type: string
+      Specnum:
+        description: 规格数量
+        type: integer
+        format: int64
+      Src:
+        type: string
+      Status:
+        description: 1默认 2 已修改 3已复查
+        type: integer
+        format: int32
+      TradePrice:
+        type: string
+      Trademark:
+        type: string
+      Trademark2:
+        type: string
+      UnitId:
+        description: 单位id 可对于该条码对应单位个数
+        type: integer
+        format: int64
+      Units:
+        type: string
+      UpdateAt:
+        type: string
+        format: string
+      Wholenum:
+        type: integer
+        format: int64
+      Wholeunit:
+        type: string
+  models.SysBarcodeOld:
+    title: SysBarcodeOld
+    type: object
+    properties:
+      Addr:
+        type: string
+      Addr2:
+        type: string
+      Batch:
+        description: 数据批次
+        type: integer
+        format: int64
+      Code2:
+        type: string
+      ExpirationDate:
+        description: 保质期
+        type: integer
+        format: int64
+      ExpirationDateUnit:
+        description: 保质期单位（1 月 2 天 3小时）
+        type: integer
+        format: int32
+      FactoryName:
+        type: string
+      FactoryName2:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Img:
+        type: string
+      IsHigh:
+        type: integer
+        format: int32
+      IsPack:
+        description: 是否为包装 0默认 1否 2是
+        type: integer
+        format: int32
+      Issame:
+        description: 是否同一产品 1是 2否 3 没找到
+        type: integer
+        format: int32
+      Name:
+        type: string
+      Name2:
+        type: string
+      RetailPrice:
+        type: string
+      Spec:
+        type: string
+      Spec2:
+        type: string
+      Specnum:
+        description: 规格数量
+        type: integer
+        format: int64
+      Src:
+        type: string
+      Status:
+        description: 1默认 2 已修改 3已复查
+        type: integer
+        format: int32
+      TradePrice:
+        type: string
+      Trademark:
+        type: string
+      Trademark2:
+        type: string
+      UnitId:
+        description: 单位id 可对于该条码对应单位个数
+        type: integer
+        format: int64
+      Units:
+        type: string
+      UpdateAt:
+        type: string
+        format: string
+      Wholenum:
+        type: integer
+        format: int64
+      Wholeunit:
+        type: string
+  models.Unit:
+    title: Unit
+    type: object
+    properties:
+      CategoryId:
+        description: 类别id
+        type: integer
+        format: int64
+      Content:
+        description: 规格说明
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Name:
+        description: 名称
+        type: string
+      Proportion:
+        description: '单位换算产品数量 如: 1箱啤酒 20瓶'
+        type: integer
+        format: int64
+      ShopId:
+        description: 店铺ID
+        type: integer
+        format: int64
+      Status:
+        description: 状态 可选值1 正常  2 删除
+        type: integer
+        format: int32
+tags:
+- name: barcode
+  description: |
+    BarcodeController operations for Barcode
+- name: cloudpay_statement_detail
+  description: |
+    CloudpayStatementDetailController operations for CloudpayStatementDetail
+- name: member
+  description: |
+    MemberController operations for Member
+- name: member_face
+  description: |
+    MemberFaceController operations for MemberFace
+- name: shop_financial_order
+  description: |
+    ShopFinancialOrderController operations for ShopFinancialOrder
+- name: shop_order
+  description: |
+    ShopOrderController operations for ShopOrder
+- name: shop_sales_records
+  description: |
+    ShopSalesRecordsController operations for ShopSalesRecords
+- name: shop_sales_settings
+  description: |
+    ShopSalesSettingsController operations for ShopSalesSettings
+- name: shop_startup_store_costs
+  description: |
+    ShopStartupStoreCostsController operations for ShopStartupStoreCosts
+- name: sys_barcode
+  description: |
+    SysBarcodeController operations for SysBarcode
+- name: sys_barcode_new
+  description: |
+    SysBarcodeNewController operations for SysBarcodeNew
+- name: sys_barcode_old
+  description: |
+    SysBarcodeOldController operations for SysBarcodeOld
+- name: unit
+  description: |
+    UnitController operations for Unit
